@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 premier testgit
 fahzsfjamzohtazù*kz 
 
@@ -6,3 +7,6 @@ az$l ro
 azp
 mz 
 a
+=======
+premier testgitfbghj
+>>>>>>> 8a2ad9605568e3b67c5421c4dc450cc817f16d04
