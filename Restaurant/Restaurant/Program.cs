@@ -10,6 +10,9 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
+            FabriqueNom.InitialiserNom();
+            Client client = new Client();
+            Console.ReadKey();
         }
     }
 }
