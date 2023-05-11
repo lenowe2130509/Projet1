@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Employe.cs" />
     <Compile Include="FabriqueNom.cs" />
     <Compile Include="Fournisseur.cs" />
     <Compile Include="Ingredient.cs" />
+    <Compile Include="JsonFileLoader.cs" />
+    <Compile Include="MarcheRecette.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Plat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

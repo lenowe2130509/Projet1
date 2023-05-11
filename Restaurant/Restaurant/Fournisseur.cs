@@ -8,18 +8,18 @@ using Newtonsoft.Json;
 
 namespace Restaurant
 {
-    internal class Fournisseur
+    static class Fournisseur
     {
-        private string nom;
+        static string Nom { get; set; }
 
         static public List<Ingredient> listIngredientDispo = new List<Ingredient>();
-        public Fournisseur(string nom)
+        static public List<Ingredient> GetCatalogueIngredient()
         {
-            this.nom = nom;
-
+            Initialiser();
+            return listIngredientDispo;
         }
 
-        public void Initialiser()
+        static  void Initialiser()
         {
             //Charger la liste d'ingrédients
             listIngredientDispo = JsonFileLoader.ChargerFichier<List<Ingredient>>("json_ingredient.json");
