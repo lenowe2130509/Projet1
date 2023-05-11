@@ -27,6 +27,8 @@ namespace Restaurant
             nosIngredients = new List<Ingredient>();
 
         }
+
+
         public void AcheterIngredient(string nom)
         {
             foreach(Ingredient ingredient in Fournisseur.GetCatalogueIngredient())
@@ -42,9 +44,7 @@ namespace Restaurant
                     else
                     {
                         Console.WriteLine("Vous n'avez pas assez d'argent , veuillez augmenter votre budget avant d'effectuer l'achat");
-                    }
-
-                    
+                    }  
                 }
                 else
                 {
@@ -72,21 +72,16 @@ namespace Restaurant
                     {
                         notreMenu.Add(plat);
                         budget = budget - plat.PrixVente();
-
                     }
                     else
                     {
                         Console.WriteLine("Vous n'avez pas assez d'argent , veuillez augmenter votre budget avant d'effectuer l'achat");
                     }
-
-
                 }
                 else
                 {
                     Console.WriteLine("Marche De Recettes" + " : « Nous N'avons pas ce plat en stock »");
                 }
-
-
             }
 
         }
@@ -110,11 +105,157 @@ namespace Restaurant
         }
 
 
+        public void AfficherMenu()
+        {
+            Console.WriteLine("MENU:\n");
 
+            // Plats principaux
+            Console.WriteLine("\n---- Plats principaux ----");
+            Console.WriteLine("1. Le Boeuf Bourguignon - 18$");
+            Console.WriteLine("2. L'Omelette Du Chef - 16$");
+            Console.WriteLine("3. Pâtes Au Poulet - 14$");
 
+            Console.WriteLine(" ----------------------------");
+            Console.WriteLine("|    Three minutes later     |");
+            Console.WriteLine(" ----------------------------");
 
+            Console.WriteLine("Vous avez fait votre choix ?");
+            Console.WriteLine("[O]ui ----------- [N]on");
 
+            bool valid = false;
+            while (!valid)
+            {
+                string decide = Console.ReadLine();
+                switch (decide)
+                {
+                    case "O":
+                        Console.WriteLine("\nMerci de faire votre choix en indiquant le numéro du plat.");
+                        int choix = Convert.ToInt32(Console.ReadLine());
 
+                        // Traiter le choix de l'utilisateur
+                        switch (choix)
+                        {
+                            case 1:
+                                Console.WriteLine("Vous avez choisi Le Boeuf Bourguignon. Excellent choix !");
+                                valid = true;
+                                // Ajouter le code pour le traitement de la commande
+                                break;
+                            case 2:
+                                Console.WriteLine("Vous optez donc pour L'Omelette Du Chef ! Bon choix :)");
+                                valid = true;
+                                // Ajouter le code pour le traitement de la commande
+                                break;
+                            case 3:
+                                Console.WriteLine("Vous avez choisi les Pâtes Au Poulet.");
+                                valid = true;
+                                break;
+                            default:
+                                Console.WriteLine("Choix invalide.");
+                                break;
+                        }
+                        break;
+                    case "N":
+                        Console.WriteLine("Pas de soucis je vous laisse le temps je reviens dans quelques instants !");
+                        Console.WriteLine(" --------------------------");
+                        Console.WriteLine("|    Two minutes later     |");
+                        Console.WriteLine(" --------------------------");
+                        break;
+                }
+            }
+        }
+
+        public void AfficherMenuSpeciale()
+        {
+            Console.WriteLine("MENU:\n");
+
+            // Plats principaux
+            Console.WriteLine("\n---- Plats principaux ----");
+            Console.WriteLine("1. Poutine - 7$");
+            Console.WriteLine("2. Filet de saumon - 16$");
+            Console.WriteLine("3. Pâtes Au Poulet - 14$");
+
+            Console.WriteLine(" ----------------------------");
+            Console.WriteLine("|    Three minutes later     |");
+            Console.WriteLine(" ----------------------------");
+            bool valide = false;
+            while(!valide)
+            {
+            Console.WriteLine("Vous avez fait votre choix ?");
+
+            Console.WriteLine("[O]ui ----------- [N]on");
+
+                string decide = Console.ReadLine();
+                switch (decide)
+                {
+                    case "O":
+                        Console.WriteLine("\nMerci de faire votre choix en indiquant le numéro du plat.");
+                        int choix = Convert.ToInt32(Console.ReadLine());
+
+                        // Traiter le choix de l'utilisateur
+                        switch (choix)
+                        {
+                            case 1:
+                                Console.WriteLine($"Vous avez choisi la Poutine très bon choix ! ");
+                                valide = true;//ajout fonction pauvreté 
+                                // Ajouter le code pour le traitement de la commande
+                                break;
+                            case 2:
+                                Console.WriteLine($"Vous avez choisi L'Omelette Du Chef bon choix !");
+                                valide = true;
+                                // Ajouter le code pour le traitement de la commande
+                                break;
+                            case 3:
+                                Console.WriteLine("Vous avez choisi les Pâtes Au Poulet.");
+                                break;
+                            default:
+                                Console.WriteLine("Choix invalide.");
+                                break;
+                        }
+                        break;
+                    case "N":
+                        Console.WriteLine("Pas de soucis je vous laisse le temps je reviens dans quelques instants !");
+                        Console.WriteLine(" --------------------------");
+                        Console.WriteLine("|    Two minutes later     |");
+                        Console.WriteLine(" --------------------------");
+                        break;
+                    default :
+                        Console.WriteLine("Excusez moi mais ce n'est pas une réponse ");
+                        break ;
+                }
+            }
+        }
+
+        public void AfficherResto()
+        {
+            Console.WriteLine("         ");
+            Console.WriteLine("         ");
+            Console.WriteLine("         ");
+            Console.WriteLine("         ");
+            Console.WriteLine("         ");
+            Console.WriteLine("         ");
+            Console.WriteLine("                  ");
+            Console.WriteLine("                                      ");
+            Console.WriteLine("                            ____            ");
+            Console.WriteLine("         __________________[____]__         ");
+            Console.WriteLine("        /                          \\        ");
+            Console.WriteLine("       /                            \\       ");
+            Console.WriteLine("      /      _______________         \\      ");
+            Console.WriteLine("     /      /                \\       \\     ");
+            Console.WriteLine("    /      /     El RESTAU    \\       \\    ");
+            Console.WriteLine("   /      /____________________\\       \\   ");
+            Console.WriteLine("  /                                      \\  ");
+            Console.WriteLine(" /                                        \\ ");
+            Console.WriteLine("/__________________________________________\\");
+            Console.WriteLine(" |                                          |");
+            Console.WriteLine(" |                                          |");
+            Console.WriteLine(" |                                          |");
+            Console.WriteLine(" |   ___      _______       ____________    |");
+            Console.WriteLine(" |  |   |    |       |     |      |     |   |");
+            Console.WriteLine(" |  |___|    |       |     |______|_____|   |");
+            Console.WriteLine(" |           |      o|                      |");
+            Console.WriteLine(" |___________|_______|______________________|");
+            Console.WriteLine();
+        }
 
     }
 }

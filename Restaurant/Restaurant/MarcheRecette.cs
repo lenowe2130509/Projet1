@@ -53,7 +53,7 @@ namespace Restaurant
             //Ajout des Pâtes Au Poulet  a la liste des plats en vente
             platsEnVente.Add(plat3);
 
-            Plat plat4 = new Plat(" Gâteau Au Chocolat ", Rarete.moyen, 15);
+            Plat plat4 = new Plat(" Poutine ", Rarete.moyen, 15);
             //La liste d'ingredients necessaires pour faire Le Gâteau Au Chocolat 
             plat4.remplirListeIng(Fournisseur.GetCatalogueIngredient()[0]);
             plat4.remplirListeIng(Fournisseur.GetCatalogueIngredient()[1]);

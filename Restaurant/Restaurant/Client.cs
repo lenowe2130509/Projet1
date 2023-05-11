@@ -66,6 +66,27 @@ namespace Restaurant
         public EtatClient Etat() { return etat; }
         //public int () { return prixVente; }
 
+        //Client Owen
+        //enum humeur
+        //{
+        //    bonneHumeur,
+        //    aigris,
+        //    joyeux,
+        //    triste,
+        //    positif
+        //}
 
+        //Random random = new Random();
+
+        //public Client()
+        //{
+        //    string nouveauNom = FabriqueNom.FabriquerNom();
+        //    Console.WriteLine(nouveauNom);
+        //    humeur humeurs = new humeur();
+        //    int humeure = Convert.ToInt32(humeurs);
+        //    humeure = random.Next(humeure);
+        //    string humeurss = Convert.ToString(humeure);
+        //    Console.WriteLine(humeurss);
+        //}
     }
 }
