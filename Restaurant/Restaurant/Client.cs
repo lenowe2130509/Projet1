@@ -27,7 +27,7 @@ namespace Restaurant
         public Client()
         {
             this.nom= FabriqueNom.FabriquerNom();
-            this.etat = EtatClient.NonServi;
+            this.etat = DonnerEtat(rand.Next(0,3));
             this.humeur = DonnerHumeur(rand.Next(0,3));
             this.budgetClient = rand.Next(5,100);
 
@@ -54,16 +54,48 @@ namespace Restaurant
             return humeur;
 
         }
-        
+        public EtatClient DonnerEtat(int n)
+        {
+            EtatClient etat= EtatClient.NonServi;
+            if (n == 1)
+            {
+                etat = EtatClient.Servi;
+
+            }
+            else if (n == 2)
+            {
+                etat = EtatClient.NonServi;
+
+            }
+            else
+            {
+                etat= EtatClient.NonServi;
+
+            }
+            return etat;
+
+        }
+
         public void ChangerEtat()
         {
             etat = EtatClient.Servi;
+
+        }
+        public void ChangerHumeur()
+        {
+            humeur = HumeurClient.Bonne;
+
+        }
+        public void Acheter(int montant)
+        {
+            budgetClient = budgetClient-montant;
 
         }
 
         public string Nom() { return nom; }
         public HumeurClient Humeur() { return humeur; }
         public EtatClient Etat() { return etat; }
+<<<<<<< HEAD
         //public int () { return prixVente; }
 
         //Client Owen
@@ -88,5 +120,15 @@ namespace Restaurant
         //    string humeurss = Convert.ToString(humeure);
         //    Console.WriteLine(humeurss);
         //}
+=======
+        public int Budget() { return budgetClient; }
+
+        public override string ToString()
+        {
+            return " Nom : " + nom + " Humeur : " + humeur + " Etat(Servi ou Non-Servi) :"+etat+ " Budget :"+budgetClient;
+        }
+>>>>>>> nouvellebranchemar
     }
+
+    
 }

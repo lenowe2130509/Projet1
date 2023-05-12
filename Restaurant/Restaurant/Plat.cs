@@ -51,6 +51,15 @@ namespace Restaurant
             prixVente = nouveauMontant;
             
         }
+        public override string ToString()
+        {
+            string info = "";
+            info += " Nom : " + nom + " Rareté : "+rarete+ " Prix D'Achat: " + prixAchat+ " Prix De Vente : " +prixVente+ "\n";
+            foreach (Ingredient ing in ingredientsNecessaires)
+                info += ing.ToString();
+
+            return info;
+        }
 
 
 

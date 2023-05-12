@@ -39,6 +39,10 @@ namespace Restaurant
             Prix = prix;
 
         }
+        public override string ToString()
+        {
+            return " Nom : " + Nom + "Calorie : " + Calorie + " Qualite :" + QualiteIng + " Prix :" + Prix;
+        }
 
     }
 }
