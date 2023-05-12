@@ -210,9 +210,16 @@ namespace Restaurant
 
             // Plats principaux
             Console.WriteLine("\n---- Plats principaux ----");
-            Console.WriteLine("1. Le Boeuf Bourguignon - 18$");
+            Console.WriteLine("1. Le Boeuf Bourguignon - 18$"); // Dans ce plat nous avons (listIngredient(1))
             Console.WriteLine("2. L'Omelette Du Chef - 16$");
             Console.WriteLine("3. Pâtes Au Poulet - 14$");
+
+            //foreach (Plat plat in notreMenu )
+            //{
+            //    int n = 1;
+            //    Console.WriteLine(n + " - "  + plat.Nom() + " - " + plat.PrixVente() + plat.retournerListe());
+            //    n++;
+            //}
 
             Console.WriteLine(" ----------------------------");
             Console.WriteLine("|    Three minutes later     |");
@@ -296,6 +303,7 @@ namespace Restaurant
                             case 1:
                                 Console.WriteLine($"Vous avez choisi la Poutine très bon choix ! ");
                                 valide = true;//ajout fonction pauvreté 
+
                                 // Ajouter le code pour le traitement de la commande
                                 break;
                             case 2:

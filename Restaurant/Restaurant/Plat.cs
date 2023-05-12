@@ -38,6 +38,12 @@ namespace Restaurant
             
             
          }
+        public List<Ingredient> retournerListe()
+        {
+            return ingredientsNecessaires;
+
+
+        }
 
         public string Nom(){return nom;}
         public Rarete Rarete() { return rarete; }

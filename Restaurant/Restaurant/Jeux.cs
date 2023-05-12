@@ -12,8 +12,10 @@ namespace Restaurant
 
         public void Jouer()
         {
-            bool valide = false;
             Console.WriteLine("             Oh lala j'ai faim et si j'allais au EL RESTAU !");
+
+            restaurant.ServirClient();
+            bool valide = false;
             restaurant.AfficherResto();
             Console.WriteLine("Bienvenue chez EL RESTAU ! \n \n Nous avons plusieurs menu à disposition lequel souhaitez-vous ?");
             Console.WriteLine("Le [M]enu normal ou le Menu [S]pécial ?");
