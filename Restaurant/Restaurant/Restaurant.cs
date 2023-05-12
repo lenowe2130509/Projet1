@@ -13,18 +13,18 @@ namespace Restaurant
         string nom;
         private List<Client> clients;
         private List<Ingredient> nosIngredients;
+        private List<Employe> notrePersonnel;
         private List<Plat> notreMenu;
-
-        // private Fournisseur fournisseur;
         private float budget;
 
         public Restaurant(string nom,float budget)
         {
             this.nom = nom;
-            //this.fournisseur = fournisseur;
             this.budget = budget;
             this.clients = new List<Client>();
             nosIngredients = new List<Ingredient>();
+            notrePersonnel= new List<Employe>();
+            notreMenu= new List<Plat>(); 
 
         }
         public void AcheterIngredient(string nom)
@@ -68,10 +68,11 @@ namespace Restaurant
             {
                 if (plat.Nom()==nom)
                 {
-                    if (budget >= plat.PrixVente())
+                    if (budget >= plat.PrixAchat())
                     {
                         notreMenu.Add(plat);
-                        budget = budget - plat.PrixVente();
+                        budget = budget - plat.PrixAchat();
+                        plat.ChangerPrixVente(plat.PrixAchat()*2);
 
                     }
                     else
@@ -109,6 +110,99 @@ namespace Restaurant
 
         }
 
+        public void ServiClient(string nom)
+        {
+            foreach (Client client in clients)
+            {
+                if (client.Etat() == EtatClient.NonServi)
+                {
+
+                    Affichermenu();
+                    //if plat pris est inferieur a budget alors
+                    //message
+                    //else
+
+                    //changeretat
+                    client.ChangerEtat();
+                    client.ChangerHumeur();
+                }
+                else
+                {
+                    Console.WriteLine("Client déjà servi !");
+                }
+            }
+        }
+
+        public void VerifPlat(Plat lePlat)
+        {
+            foreach (Plat plat in notreMenu)
+            {
+                if (plat.Nom() == nom)
+                {
+                    foreach(Client client in clients)
+                    {
+                        if (client.Budget()>= plat.PrixVente())
+                        {
+                            client.Acheter(plat.PrixVente());
+                            budget = budget+plat.PrixVente();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Restaurant : Nous sommes désolée ,Vous n'avez pas assez d'argent pour acheter ce plat . Veuillez en choisir un moins cher ou revenir plus tard ,Merci");
+
+                        }
+                    }
+                }
+                    
+                else
+                {
+                    Console.WriteLine(" Aucun Plat de Notre Menu ne possède ce nom");
+                }
+            }
+
+        }
+
+
+
+        public override string ToString()
+        {
+            string info = " *** INFORMATION DU RESTAURANT *** \n";
+            info += " Nom : " + nom+"\n";
+            info += " *** SECTION INFO SUR NOS CLIENTS *** "+ "\n";
+            foreach (Client client in clients)
+                info+= client.ToString();
+            info += " SECTION INFO SUR NOTRE MENU" + "\n";
+            foreach (Plat plat in notreMenu)
+                info += plat.ToString();
+            info += " SECTION INFO SUR NOTRE PERSONNEL" + "\n";
+            foreach (Employe employe in notrePersonnel)
+                info += employe.ToString();
+            return info;
+        }
+
+        public void PayerPersonnel()
+        {
+            if (budget >0)
+            {
+                float montantSalaire = budget/2;
+                budget = budget - montantSalaire;
+                float salaireIndividuel = montantSalaire/notrePersonnel.Count();
+                foreach (Employe employe in notrePersonnel)
+                {
+
+                    employe.RecevoirSalaire(salaireIndividuel);
+                }
+
+                
+            }
+            else
+            {
+                Console.WriteLine("Vous n'avez pas assez d'argent pour payer votre personnel");
+            }
+
+           
+
+           }
 
 
 
@@ -116,5 +210,6 @@ namespace Restaurant
 
 
 
-    }
+
+        }
 }
