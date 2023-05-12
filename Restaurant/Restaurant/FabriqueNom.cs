@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Restaurant
 {
@@ -67,6 +68,7 @@ namespace Restaurant
         {
             string nomPrenom = "";
             rand = new Random();
+            Thread.Sleep(10);
             nomPrenom = listNom[rand.Next(0, listNom.Count() -1)] + " " + listPrenom[rand.Next(0, listPrenom.Count() -1)];
             return nomPrenom;
         }

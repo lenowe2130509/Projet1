@@ -15,7 +15,7 @@ namespace Restaurant
         static void RemplirMarcheRecette()
         {
             platsEnVente = new List<Plat>();
-            Plat plat1 = new Plat(" Le Boeuf Bourguignon ", Rarete.moyen, 20);
+            Plat plat1 = new Plat("Le Boeuf Bourguignon", Rarete.moyen, 20);
             //La liste d'ingredients necessaires pour faire du Boeuf bourguignon 
             plat1.remplirListeIng(Fournisseur.GetCatalogueIngredient()[5]);
             plat1.remplirListeIng(Fournisseur.GetCatalogueIngredient()[6]);
@@ -28,7 +28,7 @@ namespace Restaurant
             //Ajout du Boeuf bourguignon a la liste des plats en vente
             platsEnVente.Add(plat1);
 
-            Plat plat2 = new Plat(" L'Omelette Du Chef ", Rarete.abondant,10);
+            Plat plat2 = new Plat("L'Omelette Du Chef", Rarete.abondant,10);
             //La liste d'ingredients necessaires pour faire L'Omelette Du Chef  
             plat2.remplirListeIng(Fournisseur.GetCatalogueIngredient()[2]);
             plat2.remplirListeIng(Fournisseur.GetCatalogueIngredient()[6]);
@@ -41,7 +41,7 @@ namespace Restaurant
             //Ajout de L'Omelette Du Chef  a la liste des plats en vente
             platsEnVente.Add(plat2);
 
-            Plat plat3 = new Plat(" Pâtes Au Poulet ", Rarete.moyen, 15);
+            Plat plat3 = new Plat("Pâtes Au Poulet", Rarete.moyen, 15);
             //La liste d'ingredients necessaires pour faire Les pâtes Au Poulet 
             plat3.remplirListeIng(Fournisseur.GetCatalogueIngredient()[5]);
             plat3.remplirListeIng(Fournisseur.GetCatalogueIngredient()[6]);
@@ -53,7 +53,7 @@ namespace Restaurant
             //Ajout des Pâtes Au Poulet  a la liste des plats en vente
             platsEnVente.Add(plat3);
 
-            Plat plat4 = new Plat(" Poutine ", Rarete.moyen, 15);
+            Plat plat4 = new Plat("Poutine", Rarete.moyen, 15);
             //La liste d'ingredients necessaires pour faire Le Gâteau Au Chocolat 
             plat4.remplirListeIng(Fournisseur.GetCatalogueIngredient()[0]);
             plat4.remplirListeIng(Fournisseur.GetCatalogueIngredient()[1]);

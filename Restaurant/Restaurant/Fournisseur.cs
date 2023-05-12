@@ -24,5 +24,6 @@ namespace Restaurant
             //Charger la liste d'ingrédients
             listIngredientDispo = JsonFileLoader.ChargerFichier<List<Ingredient>>("json_ingredient.json");
         }
+       
     }
 }

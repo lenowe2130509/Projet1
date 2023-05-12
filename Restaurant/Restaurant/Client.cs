@@ -95,7 +95,8 @@ namespace Restaurant
         public string Nom() { return nom; }
         public HumeurClient Humeur() { return humeur; }
         public EtatClient Etat() { return etat; }
-<<<<<<< HEAD
+    
+ 
         //public int () { return prixVente; }
 
         //Client Owen
@@ -120,14 +121,13 @@ namespace Restaurant
         //    string humeurss = Convert.ToString(humeure);
         //    Console.WriteLine(humeurss);
         //}
-=======
+ 
         public int Budget() { return budgetClient; }
 
         public override string ToString()
         {
             return " Nom : " + nom + " Humeur : " + humeur + " Etat(Servi ou Non-Servi) :"+etat+ " Budget :"+budgetClient;
         }
->>>>>>> nouvellebranchemar
     }
 
     

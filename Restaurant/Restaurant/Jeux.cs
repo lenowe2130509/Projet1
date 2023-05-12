@@ -9,81 +9,31 @@ namespace Restaurant
     internal class Jeux
     {
         Restaurant restaurant = new Restaurant("EL RESTAU", 120);
-
+            
         public void Jouer()
         {
+            FabriqueNom.InitialiserNom();
+            Client client = new Client();
+            Client client1 = new Client();
+            Client client2 = new Client();
+
+            restaurant.AjouterClient(client1);
+            restaurant.AjouterClient(client2);
+            restaurant.AjouterClient(client);
+            Employe emp = new Employe(" Max Duran", 2, Poste.chefCuisinier, 1500);
+            Employe emp1 = new Employe(" Vincent Morin", 0, Poste.caissiere, 15000000);
+            Employe emp2 = new Employe(" Marie", 10, Poste.caissiere, 15);
+            restaurant.Embaucher(emp);
+            restaurant.Embaucher(emp1);
+            restaurant.Embaucher(emp2);
+
+
+
             Console.WriteLine("             Oh lala j'ai faim et si j'allais au EL RESTAU !");
+           
+           restaurant.AfficherMenu();
 
-            restaurant.ServirClient();
-            bool valide = false;
-            restaurant.AfficherResto();
-            Console.WriteLine("Bienvenue chez EL RESTAU ! \n \n Nous avons plusieurs menu à disposition lequel souhaitez-vous ?");
-            Console.WriteLine("Le [M]enu normal ou le Menu [S]pécial ?");
-            while (!valide)
-            {
-                string choix = Console.ReadLine();
-                switch (choix)
-                {
-                    case "M":
-                        Console.WriteLine();
-                        Console.WriteLine("Vous avez choisis le Menu normal ! \n Le voici !");
-                        Console.WriteLine("\n Je vous laisse vous décidez ;)");
-                        restaurant.AfficherMenu();
-                        valide = true;
-                        break;
-                    case "S":
-                        Console.WriteLine();
-                        Console.WriteLine("Vous avez choisis le Menu Spécial ! \n Le voici !");
-                        Console.WriteLine("\n Je vous laisse vous décidez ;)");
-                        restaurant.AfficherMenuSpeciale();
-                        valide = true;
-                        break;
-                    default:
-                        Console.WriteLine("Excusez moi j'ai pas entendu ! Veuillez répéter s'il vous plaît.");
-                        break;
-                }
-                
-            }
-
-            Console.WriteLine();   
-            Console.WriteLine(" --------------------------");
-            Console.WriteLine("|    Five minutes later     |");
-            Console.WriteLine(" --------------------------");
-            Console.WriteLine();
-
-            valide = false;
-
-            Console.WriteLine("Et voici votre plat j'espère que ce n'était pas trop long ! \n [S]i --------- [N]on ");
-            while(!valide)
-            {
-                string avis = Console.ReadLine();
-                switch(avis)
-                {
-                    case "S":
-                        Console.WriteLine("J'en suis sincèrement désolé !");
-                        valide = true;
-                        break ;
-                    case "N":
-                        Console.WriteLine("Tant mieux on fait de notre mieux !");
-                        valide = true;
-                        break;
-                    default:
-                        Console.WriteLine("Excusez moi je n'ai pas entendu il y a beaucoup de bruit autour.");
-                        break;
-                }
-            }
-            Console.WriteLine("Je vous souhaite un bon appétit !");
-
-            //Donner le plat + affirmation client servi
-
-            Console.WriteLine("      ________");
-            Console.WriteLine("   .-'        '-.");
-            Console.WriteLine("  /    .---.    \\");
-            Console.WriteLine(" |    /     \\    |");
-            Console.WriteLine(" |   ;       ;   |");
-            Console.WriteLine(" \\  |       |  /");
-            Console.WriteLine("   '-;       ;-'");
-            Console.WriteLine("      '-...-'");
+            Console.WriteLine("Vous avez fini le jeu bien joué à vous !");
 
 
         }
